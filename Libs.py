@@ -28,8 +28,8 @@ def hasSpecialOrIntChar(string: str) -> bool:
     return True
 
 
-# retourne si la chaine "string" contient au moins 1 fois le caractere "char"
-def strContent(string: str, char: str) -> bool:
+# retourne si la chaine "string" contient au moins 1 fois un charactere present dans le tableau "array"
+def strContent(string: str, array: list) -> bool:
     return True
 
 
