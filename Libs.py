@@ -29,18 +29,12 @@ def hasMinEightChar(string: str) -> bool:
 def hasSpecialOrIntChar(string: str) -> bool:
     special = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
     ints = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    if strContent(string, special) or strContent(string, ints):
-        return True
-    else:
-        return False
+    return strContent(string, special) or strContent(string, ints)
 
 
 # retourne si la chaine "string" contient au moins 1 fois un charactere present dans le tableau "array"
 def strContent(string: str, array: list) -> bool:
-    if string in array:
-        return True
-    else:
-        return False
+    return string in array
 
 
 # Retourne le niveau de sécuriter du mot de passe
