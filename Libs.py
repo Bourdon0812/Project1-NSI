@@ -19,7 +19,7 @@ def hasMinCar(string: str) -> bool:
 
 
 # Retourne si une chaine de caracetre a minimum 8 charactere
-def HasMinEightChar(string: str) -> bool:
+def hasMinEightChar(string: str) -> bool:
     return True
 
 
