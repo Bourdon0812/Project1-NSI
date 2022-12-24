@@ -10,11 +10,12 @@ def getNoValidReason(mdp: str) -> str:
 
 # Retourne si une chaine de caractere contient au moins 1 majuscule
 def hasMajChar(string: str) -> bool:
-    return True
+    maj = ["A", "B", "C", "D"]
+    return strContent(string, maj)
 
 
 # Retourne si une chaine de caractere contient au moins 1 minuscule
-def hasMinCar(string: str) -> bool:
+def hasMinChar(string: str) -> bool:
     return True
 
 
@@ -43,7 +44,7 @@ def getMDPLevelSecurity(mdp: str) -> int:
         level=level+1
     if hasMajChar(mdp)==True:
         level=level+1
-    if hasMinCar==True:
+    if hasMinChar(mdp)==True:
         level=level+1
     if hasSpecialOrIntChar(mdp)==True:
         level=level+1
