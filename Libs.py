@@ -36,5 +36,3 @@ def strContent(string: str, char: str) -> bool:
 # Retourne le niveau de sécuriter du mot de passe
 def getMDPLevelSecurity(mdp: str) -> int:
     return 0
-
-caca
