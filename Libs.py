@@ -22,7 +22,7 @@ def hasMinChar(string: str) -> bool:
 
 # Retourne si une chaine de caracetre a minimum 8 charactere
 def hasMinEightChar(string: str) -> bool:
-    if (len(string) >= 8):
+    if len(string) >= 8:
         return True
     else:
         return False
