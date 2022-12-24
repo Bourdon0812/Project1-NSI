@@ -10,13 +10,14 @@ def getNoValidReason(mdp: str) -> str:
 
 # Retourne si une chaine de caractere contient au moins 1 majuscule
 def hasMajChar(string: str) -> bool:
-    maj = ["A", "B", "C", "D"]
+    maj = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     return strContent(string, maj)
 
 
 # Retourne si une chaine de caractere contient au moins 1 minuscule
 def hasMinChar(string: str) -> bool:
-    return True
+    min = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    return strContent(string, min)
 
 
 # Retourne si une chaine de caracetre a minimum 8 charactere
@@ -29,7 +30,12 @@ def hasMinEightChar(string: str) -> bool:
 
 # Retourne si une chaine de caractere contient au moins 1 caractere special ou un chiffre
 def hasSpecialOrIntChar(string: str) -> bool:
-    return True
+    special = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
+    ints = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    if strContent(string, special) or strContent(string, ints):
+        return True
+    else:
+        return False
 
 
 # retourne si la chaine "string" contient au moins 1 fois un charactere present dans le tableau "array"
