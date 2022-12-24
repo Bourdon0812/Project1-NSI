@@ -20,7 +20,10 @@ def hasMinCar(string: str) -> bool:
 
 # Retourne si une chaine de caracetre a minimum 8 charactere
 def hasMinEightChar(string: str) -> bool:
-    return True
+    if (len(string)>=8):
+        return True
+    else:
+        return False
 
 
 # Retourne si une chaine de caractere contient au moins 1 caractere special ou un chiffre
@@ -35,4 +38,13 @@ def strContent(string: str, array: list) -> bool:
 
 # Retourne le niveau de sécuriter du mot de passe
 def getMDPLevelSecurity(mdp: str) -> int:
-    return 0
+    level=0
+    if hasMinEightChar(mdp)==True:
+        level=level+1
+    if hasMajChar(mdp)==True:
+        level=level+1
+    if hasMinCar==True:
+        level=level+1
+    if hasSpecialOrIntChar(mdp)==True:
+        level=level+1
+    return level
