@@ -2,6 +2,7 @@ from tkinter import *
 
 window = Tk()
 
+
 def onDisconect():
     window.destroy()
 
@@ -31,9 +32,25 @@ canvas.create_image(
 )
 canvas.grid(row=0, column=0, sticky=W)
 
-disconectButton = Button(baseFrame, text="Déconexion", font=("arial", 10), bg="#535353", command=onDisconect)
-disconectButton.grid(row=0, column=1, sticky=E, padx=550)
+disconectButton = Button(baseFrame, text="Déconnexion", font=("arial", 10), fg='#ffffff', bg="red", command=onDisconect)
+disconectButton.grid(row=0, column=3, sticky=E, padx=10)
 
+infoFrame = Frame(baseFrame, bg="#535353", bd=2, relief=SUNKEN, padx=20)
+
+infoTitle = Label(infoFrame, text="Politique de sécurité : ", font=("Arial", 20, "bold"), fg="red", bg="#535353")
+infoTitle.grid(row=0, column=0, sticky=W)
+
+infoRequire = Label(
+    infoFrame,
+    text="Le mot de passe doit contenir au minimum : \n  ➤ 8 caractères \n  ➤ 1 majuscule \n  ➤ 1 minuscule \n  ➤ 1 chiffre ou 1 caractere spécial",
+    font=("Arial", 15),
+    fg="#ffffff",
+    bg="#535353",
+    justify=LEFT
+)
+infoRequire.grid(row=1, column=0, sticky=W)
+
+infoFrame.grid(row=1, column=1, sticky=W, padx=50)
 baseFrame.pack(fill=X)
 
 window.mainloop()
