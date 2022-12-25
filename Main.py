@@ -33,17 +33,17 @@ canvas.create_image(
 canvas.grid(row=0, column=0, sticky=W)
 
 disconectButton = Button(baseFrame, text="Déconnexion", font=("arial", 10), fg='#ffffff', bg="red", command=onDisconect)
-disconectButton.grid(row=0, column=3, sticky=E, padx=10)
+disconectButton.grid(row=0, column=3, sticky=E, padx=5)
 
-infoFrame = Frame(baseFrame, bg="#535353", bd=2, relief=SUNKEN, padx=20)
+infoFrame = Frame(baseFrame, bg="#535353", bd=2, relief=SUNKEN, padx=55)
 
-infoTitle = Label(infoFrame, text="Politique de sécurité : ", font=("Arial", 20, "bold"), fg="red", bg="#535353")
+infoTitle = Label(infoFrame, text="Politique de sécurité : ", font=("Arial", 17, "bold"), fg="red", bg="#535353")
 infoTitle.grid(row=0, column=0, sticky=W)
 
 infoRequire = Label(
     infoFrame,
     text="Le mot de passe doit contenir au minimum : \n  ➤ 8 caractères \n  ➤ 1 majuscule \n  ➤ 1 minuscule \n  ➤ 1 chiffre ou 1 caractere spécial",
-    font=("Arial", 15),
+    font=("Arial", 13),
     fg="#ffffff",
     bg="#535353",
     justify=LEFT
