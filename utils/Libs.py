@@ -34,7 +34,10 @@ def hasSpecialOrIntChar(string: str) -> bool:
 
 # retourne si la chaine "string" contient au moins 1 fois un charactere present dans le tableau "array"
 def strContent(string: str, array: list) -> bool:
-    return string in array
+    for i in string:
+        if i in array:
+            return True
+    return False
 
 
 # Retourne le niveau de sécuriter du mot de passe
