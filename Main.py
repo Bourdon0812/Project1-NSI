@@ -35,7 +35,7 @@ def setLine1():
     line1: Frame = Frame(baseFrame, bg="#535353")
 
     img: PhotoImage = PhotoImage(file="resources\logo.png").zoom(2).subsample(20)
-    canvas: Canvas = Canvas(line1, width=75, height=75, bg="#535353", bd=0, highlightthickness=0)
+    canvas: Canvas = Canvas(line1, width=75, height=75, bg="#535353", bd=0, highlightthickness=1)
     canvas.create_image(
         75 / 2,
         75 / 2,
@@ -75,7 +75,7 @@ def setLine3():
     mdpLabbel: Label = Label(line3, text="Saisissez votre mot de passe : ", font=("Arial", 13, "bold"), fg="red", bg="#535353")
     mdpLabbel.grid(row=0, column=0, sticky=W, padx=20)
 
-    mdpInput: Entry = Entry(line3, font=("arial", 13), bg="#535353", fg="white")
+    mdpInput = Entry(line3, font=("arial", 13), bg="#535353", fg="white")
     mdpInput.grid(row=0, column=1, sticky=W)
     mdpInput.bind("<KeyRelease>", keyPressEvent)
 
@@ -102,7 +102,7 @@ def setLine5():
     mdpLabbel: Label = Label(line5, text="Confirmer votre mot de passe :", font=("Arial", 13, "bold"), fg="red", bg="#535353")
     mdpLabbel.grid(row=0, column=0, sticky=W, padx=20)
 
-    mdpConfirmInput: Entry = Entry(line5, font=("arial", 13), bg="#535353", fg="white")
+    mdpConfirmInput = Entry(line5, font=("arial", 13), bg="#535353", fg="white")
     mdpConfirmInput.grid(row=0, column=1, sticky=W)
 
     buttonConfirm: Button = Button(line5, text="Confirmer", font=("arial", 20), fg='#ffffff', bg="red", command=submitPassword)
