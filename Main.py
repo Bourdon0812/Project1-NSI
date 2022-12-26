@@ -19,9 +19,9 @@ def submitPassword():
         return
     # de meme ici, on verifie si le mot de passe confirmer correspond
     if mdpInput.get() != mdpConfirmInput.get():
-        showerror("Mot De Passe", "Les 2 mot de passe ne correspondent pas")
+        showerror("Mot De Passe", "Les deux mots de passe ne correspondent pas")
         return
-    showinfo("Mot De Passe", "Votre mot de passe a été changé avec succés, vous pouvez fermer les pages")
+    showinfo("Mot De Passe", "Votre mot de passe a été changé avec succès, vous pouvez fermer la page")
 
 
 # Fonction appelé lorsque le bouton de deconexion est pressé alors on ferme la fenetre
@@ -125,7 +125,7 @@ def setLine5():
     global mdpConfirmInput
     line5: Frame = Frame(baseFrame, bg="#535353")
 
-    mdpLabbel: Label = Label(line5, text="Confirmer votre mot de passe :", font=("Arial", 13, "bold"), fg="red",
+    mdpLabbel: Label = Label(line5, text="Confirmez votre mot de passe :", font=("Arial", 13, "bold"), fg="red",
                              bg="#535353")
     mdpLabbel.grid(row=0, column=0, sticky=W, padx=20)
 
