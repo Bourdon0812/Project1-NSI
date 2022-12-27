@@ -1,11 +1,20 @@
 # Retourne si le mot de passe est valide ou non
 def isValid(mdp: str) -> bool:
-    return True
+    return hasMajChar(mdp) and hasMinChar(mdp) and hasMinEightChar(mdp) and hasSpecialOrIntChar(mdp)
 
 
 # Retourne la raison de la non validité du mot de passe
 def getNoValidReason(mdp: str) -> str:
-    return "Pas de majuscule"
+    reason = ""
+    if not hasMajChar(mdp):
+        reason += "- Votre mot de passe ne contient pas de caractere Majuscule \n"
+    if not hasMinChar(mdp):
+        reason += "- Votre mot de passe ne contient pas de caractere Minuscule \n"
+    if not hasMinEightChar(mdp):
+        reason += "- Votre mot de passe ne contient pas au moins 8 caracteres \n"
+    if not hasSpecialOrIntChar(mdp):
+        reason += "- Votre mot de passe ne contient pas de chiffre ou de caractere special \n"
+    return reason
 
 
 # Retourne si une chaine de caractere contient au moins 1 majuscule

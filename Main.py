@@ -13,15 +13,16 @@ from utils.Libs import *
 
 # Fonction appelé lorsque le bouton confirmer est cliqué
 def submitPassword():
-    # dans le cas ou le mot de passe est pas valide on envoi une erreur et explique la raison
-    if not isValid(mdpInput.get()):
-        showerror("Mot De Passe", "Votre mot de passe n'est pas valide car" + getNoValidReason(mdpInput.get()))
-        return
-    # de meme ici, on verifie si le mot de passe confirmer correspond
+    # on verifie si le mot de passe confirmé correspond à celui saisi initialement
     if mdpInput.get() != mdpConfirmInput.get():
-        showerror("Mot De Passe", "Les deux mots de passe ne correspondent pas")
+        showerror("Mot De Passe", "Les 2 mot de passe ne correspondent pas")
         return
-    showinfo("Mot De Passe", "Votre mot de passe a été changé avec succès, vous pouvez fermer la page")
+    # et ici dans le cas ou le mot de passe n'est pas valide on envoi une erreur et explique les raisons
+    if not isValid(mdpInput.get()):
+        showerror("Mot De Passe", "Votre mot de passe n'est pas valide car : \n" + getNoValidReason(mdpInput.get()))
+        return
+
+    showinfo("Mot De Passe", "Votre mot de passe a été changé avec succés, vous pouvez fermer les pages")
 
 
 # Fonction appelé lorsque le bouton de deconexion est pressé alors on ferme la fenetre
