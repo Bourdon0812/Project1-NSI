@@ -46,6 +46,12 @@ def genWindow(win: Tk):
     win.config(background="#535353")
 
 
+# Génération du header
+def setHeader():
+    title: Label = Label(window, text="Mise à jour de votre mot de passe", font=("Arial", 30), fg="white", bg="red",relief=SUNKEN)
+    title.pack(fill=X)
+
+
 # generation de l'image presente en haut a gauche ainsi que de la creation du bouton de déconexion
 def setLine1():
     # obligé de la globalisé sinon la variable se detruit apres l'execution de la fonction et donc elle disparait sur l'interface
@@ -140,17 +146,15 @@ def setLine5():
     line5.grid(row=4, column=0, sticky=W, pady=25)
 
 
-window: Tk = Tk()
+window: Tk = Tk()  # Variable qui correspond a la fenetre
+mdpInput: Entry | None = None  # Variable qui correspond au champs du mot de passe
+mdpConfirmInput: Entry | None = None  # Variable qui correspond au champs du mot de passe confirmé
+baseFrame: Frame = Frame(window, bg="#535353")  # Variable correspondant a la frame contenant tout les elements hormis le header
+img: PhotoImage = PhotoImage(file="resources\logo.png").zoom(2).subsample(20)  # Variable correspondant a l'image situé en haut à gauche, obligé d'être stocké ici ccar sinon l'image disparait etant donné que la variable est detruite apres la fin de la fonctionn qui la genere
+
+# appel des fonctions generant les differents elements de l'interface
 genWindow(window)
-mdpInput: Entry | None = None
-mdpConfirmInput: Entry | None = None
-title: Label = Label(window, text="Mise à jour de votre mot de passe", font=("Arial", 30), fg="white", bg="red",
-                     relief=SUNKEN)
-title.pack(fill=X)
-baseFrame: Frame = Frame(window, bg="#535353")
-
-img: PhotoImage = PhotoImage(file="resources\logo.png").zoom(2).subsample(20)
-
+setHeader()
 setLine1()
 setLine2()
 setLine3()
