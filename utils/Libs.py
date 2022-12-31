@@ -29,7 +29,7 @@ def hasMinChar(string: str) -> bool:
     return strContent(string, min)
 
 
-# Retourne si une chaine de caracetre a minimum 8 charactere
+# Retourne si une chaine de caracetre a minimum 8 caracteres
 def hasMinEightChar(string: str) -> bool:
     return len(string) >= 8
 
@@ -41,7 +41,7 @@ def hasSpecialOrIntChar(string: str) -> bool:
     return strContent(string, special) or strContent(string, ints)
 
 
-# retourne si la chaine "string" contient au moins 1 fois un charactere present dans le tableau "array"
+# retourne si la chaine "string" contient au moins 1 fois un caractere present dans le tableau "array"
 def strContent(string: str, array: list) -> bool:
     for i in string:
         if i in array:
@@ -49,7 +49,7 @@ def strContent(string: str, array: list) -> bool:
     return False
 
 
-# Retourne le niveau de sécuriter du mot de passe
+# Retourne le niveau de sécurité du mot de passe
 def getMDPLevelSecurity(mdp: str) -> int:
     level: int = 0
     if hasMinEightChar(mdp):
