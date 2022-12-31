@@ -11,13 +11,13 @@ from tkinter.messagebox import *
 from utils.Libs import *
 
 
-# Fonction appelé lorsque le bouton confirmer est cliqué
+# Fonction appelé lorsque on clique sur "Confirmer"
 def submitPassword():
-    # on verifie si le mot de passe confirmé correspond à celui saisi initialement
+    # on verifie si les deux mots de passe sont identiques
     if mdpInput.get() != mdpConfirmInput.get():
         showerror("Mot De Passe", "Les 2 mot de passe ne correspondent pas")
         return
-    # et ici dans le cas ou le mot de passe n'est pas valide on envoi une erreur et explique les raisons
+    # et ici dans le cas ou le mot de passe n'est pas valide on envoi une erreur en expliquant les raisons
     if not isValid(mdpInput.get()):
         showerror("Mot De Passe", "Votre mot de passe n'est pas valide car : \n" + getNoValidReason(mdpInput.get()))
         return
@@ -25,18 +25,17 @@ def submitPassword():
     showinfo("Mot De Passe", "Votre mot de passe a été changé avec succés, vous pouvez fermer les pages")
 
 
-# Fonction appelé lorsque le bouton de deconexion est pressé alors on ferme la fenetre
+# Fonction appelé lorsque on clique sur "Déconnexion"
 def onDisconect():
     window.destroy()
 
 
-# Cette fonction est appelé lorsque une touche du clavier est relaché, elle a pour but d'update les cases
-# en rouge ou en verte en fonction des criteres respecté ou non
+# Fonction qui update les carrés indiquant le niveau de sécurité lorsque une touche est relachée
 def keyPressEvent(event):
     setLine4(mdpInput.get())
 
 
-# Génération de la base de la fenetre : titre, resolution, icone, couleur de fond etc
+# Génération de la base de la fenetre : titre, resolution, icone, couleur de fond etc.
 def genWindow(win: Tk):
     win.title("Mot de passe")
     win.iconbitmap("resources\logo.ico")
@@ -52,9 +51,9 @@ def setHeader():
     title.pack(fill=X)
 
 
-# generation de l'image presente en haut a gauche ainsi que de la creation du bouton de déconnexion
+# Géneration du logo et du bouton "Déconnexion"
 def setLine1():
-    # obligé de la globalisé sinon la variable se detruit apres l'execution de la fonction et donc elle disparait sur l'interface
+    # obligé de la globaliser sinon la variable se detruit apres l'execution de la fonction et donc elle disparait sur l'interface
     global img
     line1: Frame = Frame(baseFrame, bg="#535353")
 
@@ -76,7 +75,7 @@ def setLine1():
     line1.grid(row=0, column=0, sticky=W)
 
 
-# generation du cadre expliquant les criteres à respecter afin d'avoir un mot de passe valide
+# Generation du cadre "Politique de sécurité"
 def setLine2():
     line2: Frame = Frame(baseFrame, bg="#535353")
     infoFrame: Frame = Frame(line2, bg="#535353", bd=2, relief=SUNKEN)
@@ -113,7 +112,7 @@ def setLine3():
     line3.grid(row=2, column=0, sticky=W, pady=25)
 
 
-# generation des voyant vert et rouge en fonction des criteres respectés ou non (1 voyant vert par critere respecté)
+# Generation des voyant vert et rouge indiquant le niveau de sécurité
 def setLine4(mdp: str):
     line4: Frame = Frame(baseFrame, bg="#535353")
 
@@ -127,7 +126,7 @@ def setLine4(mdp: str):
     line4.grid(row=3, column=0, sticky=W, padx=300)
 
 
-# generation du champ de texte permettant de confirmer le mot de passe ainsi que du bouton de soumission
+# Generation du second champ de texte et du bouton "Confirmer"
 def setLine5():
     global mdpConfirmInput
     line5: Frame = Frame(baseFrame, bg="#535353")
@@ -152,7 +151,7 @@ mdpConfirmInput: Entry | None = None  # Variable qui correspond au champs du mot
 baseFrame: Frame = Frame(window, bg="#535353")  # Variable correspondant a la frame contenant tout les elements hormis le header
 img: PhotoImage = PhotoImage(file="resources\logo.png").zoom(2).subsample(20)  # Variable correspondant a l'image situé en haut à gauche, obligé d'être stocké ici ccar sinon l'image disparait etant donné que la variable est detruite apres la fin de la fonctionn qui la genere
 
-# appel des fonctions generant les differents elements de l'interface
+# Appel des fonctions generant les differents elements de l'interface
 genWindow(window)
 setHeader()
 setLine1()
