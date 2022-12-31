@@ -1,7 +1,7 @@
 #
 #                                   Project 1 NSI
 #
-#   Systéme de validation de changement de mot de passe en python sous interface graphique à l'aide du module
+#   Système de validation de changement de mot de passe en python sous interface graphique à l'aide du module
 #   Tkinter
 #
 #
@@ -52,7 +52,7 @@ def setHeader():
     title.pack(fill=X)
 
 
-# generation de l'image presente en haut a gauche ainsi que de la creation du bouton de déconexion
+# generation de l'image presente en haut a gauche ainsi que de la creation du bouton de déconnexion
 def setLine1():
     # obligé de la globalisé sinon la variable se detruit apres l'execution de la fonction et donc elle disparait sur l'interface
     global img
@@ -97,7 +97,7 @@ def setLine2():
     line2.grid(row=1, column=0, sticky=W)
 
 
-# Generation de  l'inputt permettant de saisir le mot de passe
+# Generation de  l'input permettant de saisir le mot de passe
 def setLine3():
     global mdpInput
     line3: Frame = Frame(baseFrame, bg="#535353")
@@ -113,7 +113,7 @@ def setLine3():
     line3.grid(row=2, column=0, sticky=W, pady=25)
 
 
-# generation des voyant vert et rouge en fonction des criteres respecté ou non (1 voyant vert par criteres respecté)
+# generation des voyant vert et rouge en fonction des criteres respectés ou non (1 voyant vert par critere respecté)
 def setLine4(mdp: str):
     line4: Frame = Frame(baseFrame, bg="#535353")
 
